@@ -1,0 +1,40 @@
+{
+  "name": "face-shape",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "css:watch": "npx tailwindcss -i ./src/index.css -o ./src/tailwind.css --watch",
+    "css:build": "npx tailwindcss -i ./src/index.css -o ./src/tailwind.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mediapipe/drawing_utils": "^0.3.1675466124",
+    "@mediapipe/face_mesh": "^0.4.1633559619",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "node-vibrant": "^4.0.3",
+    "posthog-js": "^1.230.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.12",
+    "@vitejs/plugin-legacy": "^6.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0"
+  }
+}
