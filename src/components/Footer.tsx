@@ -6,7 +6,7 @@ import { APP_DESCRIPTION, APP_ICON, APP_NAME } from "../Constants";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white mt-8">
+    <footer className="bg-white text-black mt-8">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
@@ -14,12 +14,12 @@ const Footer: React.FC = () => {
             <Link to="/" className="text-xl font-bold">
               {APP_ICON} {APP_NAME}
             </Link>
-            <p className="mt-2 text-gray-400">{APP_DESCRIPTION}</p>
+            <p className="mt-2 text-gray-600">{APP_DESCRIPTION}</p>
           </div>
 
           {/* Copyright */}
           <div>
-            <p className="text-gray-400">
+            <p className="text-gray-600">
               © {new Date().getFullYear()} - All rights reserved
             </p>
           </div>

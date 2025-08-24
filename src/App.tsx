@@ -20,6 +20,9 @@ import HeartFace from "./pages/FaceShapes/HeartFace";
 import DiamondFace from "./pages/FaceShapes/DiamondFace";
 import OblongFace from "./pages/FaceShapes/OblongFace";
 
+// Import face shapes pages
+import FaceShapeTypeResult from "./pages/PhotoResult/FaceShapeTypeResult";
+
 // Analytics wrapper component
 const AnalyticsWrapper = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -37,7 +40,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-8 bg-gray-100">
+      <main className="flex-1 container mx-auto px-4 py-8 bg-white">
         {children}
       </main>
       <Footer />
@@ -49,7 +52,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <AnalyticsWrapper>
-        <div className="flex flex-col min-h-screen bg-gray-100">
+        <div className="flex flex-col min-h-screen bg-white">
           <Routes>
             <Route
               path="/"
@@ -122,6 +125,14 @@ const App: React.FC = () => {
               element={
                 <Layout>
                   <OblongFace />
+                </Layout>
+              }
+            />
+            <Route
+              path="/photo-result/face-shape-type-result"
+              element={
+                <Layout>
+                  <FaceShapeTypeResult />
                 </Layout>
               }
             />

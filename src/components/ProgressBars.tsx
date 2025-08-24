@@ -28,7 +28,7 @@ const ProgressBars: React.FC<ProgressBarsProps> = ({ probabilities }) => {
             </div>
 
             {/* Thinner progress bar container */}
-            <div className="w-full bg-gray-200 rounded-full h-2.5">
+            <div className="w-full bg-white border border-gray-300 rounded-full h-2.5">
               {/* Orange progress bar */}
               <div
                 className="bg-orange-500 h-2.5 rounded-full"

@@ -23,6 +23,7 @@ interface FileUploadProps {
   showMeasurements: boolean;
   showFaceMesh: boolean;
   setIsProcessing: React.Dispatch<React.SetStateAction<boolean>>;
+  setPreviewUrl: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const FileUpload: React.FC<FileUploadProps> = ({
@@ -35,14 +36,15 @@ const FileUpload: React.FC<FileUploadProps> = ({
   showMeasurements,
   showFaceMesh,
   setIsProcessing,
+  setPreviewUrl,
 }) => {
   const photoCanvasRef = useRef<HTMLCanvasElement>(null);
   const faceMeshCanvasRef = useRef<HTMLCanvasElement>(null);
   const extractedColorRef = useRef<string>("#FF0000");
   const [lastResults, setLastResults] = useState<FaceMeshResults | null>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [previewUrl, setLocalPreviewUrl] = useState<string | null>(null);
 
   // Create callbacks object for the rendering function
   const renderCallbacks: RenderCallbacks = {
@@ -90,7 +92,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
       showMeasurements,
       renderCallbacks
     );
-  }, [showMeasurements, lastResults]);
+  }, [showMeasurements, lastResults, showFaceMesh]);
 
   const handleFileUpload = (file: File) => {
     const validTypes = ["image/jpeg", "image/png", "image/jpg", "image/webp"];
@@ -111,6 +113,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
     const img = new Image();
     const fileUrl = URL.createObjectURL(file);
     setPreviewUrl(fileUrl);
+    setLocalPreviewUrl(fileUrl);
     img.src = fileUrl;
 
     img.onload = () => {
@@ -196,8 +199,8 @@ const FileUpload: React.FC<FileUploadProps> = ({
       <div
         className={`mx-auto my-5 w-3/4 border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
           isDragging
-            ? "border-blue-500 bg-blue-50"
-            : "border-gray-300 hover:border-blue-400 hover:bg-gray-50"
+            ? "border-blue-500 bg-white"
+            : "border-gray-300 hover:border-blue-400 hover:bg-white"
         } ${lastResults ? "mt-4" : "mt-0"}`}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}

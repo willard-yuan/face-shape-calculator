@@ -13,7 +13,7 @@ const FaceShapeDetectionCTA: React.FC<FaceShapeDetectionCTAProps> = ({
     faceShape.charAt(0).toUpperCase() + faceShape.slice(1);
 
   return (
-    <section className="bg-gray-100 p-6 rounded-lg mb-8">
+    <section className="bg-white p-6 rounded-lg mb-8 border border-gray-200">
       <h2 className="text-2xl font-semibold mb-4">
         Not Sure if You Have a
         {faceShape === "oval" || faceShape === "oblong" ? "n" : ""}{" "}
@@ -25,7 +25,7 @@ const FaceShapeDetectionCTA: React.FC<FaceShapeDetectionCTAProps> = ({
       </p>
       <Link
         to="/detect"
-        className="inline-block bg-gray-800 text-white border border-gray-800 hover:bg-gray-700 font-bold py-2 px-4 rounded"
+        className="inline-block bg-black text-white border border-black hover:bg-gray-800 font-bold py-2 px-4 rounded"
       >
         Detect Your Face Shape
       </Link>

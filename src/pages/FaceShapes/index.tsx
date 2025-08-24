@@ -54,7 +54,7 @@ const FaceShapes: React.FC = () => {
           </p>
           <Link
             to="/detect"
-            className="inline-block bg-gray-800 text-white border border-gray-800 hover:bg-gray-700 font-bold py-2 px-4 rounded"
+            className="inline-block bg-black text-white border border-black hover:bg-gray-800 font-bold py-2 px-4 rounded"
           >
             Try Our Face Shape Detection Tool
           </Link>
